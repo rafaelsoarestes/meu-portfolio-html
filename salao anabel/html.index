@@ -1,0 +1,941 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anabel Concept | Salão de Beleza</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- FUNDO DECORATIVO -->
+    <div class="background-decoration">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+            <span class="logo-main">ANABEL</span>
+            <span class="logo-sub">CONCEPT</span>
+        </div>
+
+        <nav class="menu">
+
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#profissionais">Profissionais</a>
+            <a href="#sobre">Sobre</a>
+
+            <button class="btn-login" onclick="mostrarTela('login')">
+                Entrar
+            </button>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= INÍCIO ================= -->
+
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-content">
+
+                <span class="small-title">
+                    ✦ BELEZA • CUIDADO • ELEGÂNCIA ✦
+                </span>
+
+                <h1>
+                    Sua beleza,
+                    <span>nosso cuidado.</span>
+                </h1>
+
+                <p>
+                    Bem-vindo ao Anabel Concept, um espaço pensado
+                    para cuidar de você com carinho, qualidade e
+                    sofisticação.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="btn-primary"
+                        onclick="mostrarTela('cadastro')">
+                        Agendar horário
+                    </button>
+
+                    <button
+                        class="btn-secondary"
+                        onclick="mostrarTela('login')">
+                        Acessar minha conta
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card">
+
+                <div class="hero-circle">
+
+                    <div class="beauty-icon">
+                        ✨
+                    </div>
+
+                    <span>ANABEL</span>
+                    <small>CONCEPT</small>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SERVIÇOS ================= -->
+
+        <section id="servicos" class="section">
+
+            <div class="section-title">
+
+                <span>O QUE OFERECEMOS</span>
+
+                <h2>
+                    Nossos serviços
+                </h2>
+
+                <p>
+                    Cuidados pensados para realçar sua beleza.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ✂
+                    </div>
+
+                    <h3>Cabelos</h3>
+
+                    <p>
+                        Corte, escova, hidratação e cuidados
+                        especiais para seus cabelos.
+                    </p>
+
+                    <span class="service-price">
+                        A partir de R$ 40
+                    </span>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        💅
+                    </div>
+
+                    <h3>Unhas</h3>
+
+                    <p>
+                        Manicure, pedicure e cuidados para
+                        deixar suas unhas ainda mais bonitas.
+                    </p>
+
+                    <span class="service-price">
+                        A partir de R$ 30
+                    </span>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        💆
+                    </div>
+
+                    <h3>Estética</h3>
+
+                    <p>
+                        Procedimentos de beleza e cuidados
+                        para proporcionar bem-estar.
+                    </p>
+
+                    <span class="service-price">
+                        A partir de R$ 50
+                    </span>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ✨
+                    </div>
+
+                    <h3>Beleza</h3>
+
+                    <p>
+                        Produção especial para momentos
+                        importantes e ocasiões especiais.
+                    </p>
+
+                    <span class="service-price">
+                        A partir de R$ 60
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROFISSIONAIS ================= -->
+
+        <section id="profissionais" class="section professionals">
+
+            <div class="section-title">
+
+                <span>NOSSA EQUIPE</span>
+
+                <h2>
+                    Profissionais
+                </h2>
+
+                <p>
+                    Escolha o profissional que deseja no momento
+                    do seu agendamento.
+                </p>
+
+            </div>
+
+
+            <div class="professionals-grid">
+
+                <div class="professional-card">
+
+                    <div class="professional-photo">
+                        A
+                    </div>
+
+                    <h3>Profissional 01</h3>
+
+                    <p>
+                        Cabeleireira
+                    </p>
+
+                </div>
+
+
+                <div class="professional-card">
+
+                    <div class="professional-photo">
+                        B
+                    </div>
+
+                    <h3>Profissional 02</h3>
+
+                    <p>
+                        Manicure
+                    </p>
+
+                </div>
+
+
+                <div class="professional-card">
+
+                    <div class="professional-photo">
+                        C
+                    </div>
+
+                    <h3>Profissional 03</h3>
+
+                    <p>
+                        Esteticista
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SOBRE ================= -->
+
+        <section id="sobre" class="about">
+
+            <div>
+
+                <span>
+                    SOBRE O ANABEL CONCEPT
+                </span>
+
+                <h2>
+                    Beleza que começa
+                    no cuidado.
+                </h2>
+
+                <p>
+                    O Anabel Concept foi pensado para facilitar
+                    a organização dos serviços do salão e tornar
+                    o agendamento mais simples para clientes e
+                    profissionais.
+                </p>
+
+                <button
+                    class="btn-primary"
+                    onclick="mostrarTela('cadastro')">
+                    Começar agora
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================================= -->
+    <!-- ================= MODAL LOGIN =================== -->
+    <!-- ================================================= -->
+
+    <div id="login" class="screen">
+
+        <div class="form-container">
+
+            <button class="close-button"
+                onclick="fecharTelas()">
+                ×
+            </button>
+
+            <div class="form-logo">
+                <span>ANABEL</span>
+                <small>CONCEPT</small>
+            </div>
+
+            <h2>Bem-vindo de volta!</h2>
+
+            <p class="form-description">
+                Acesse sua conta para continuar.
+            </p>
+
+
+            <form onsubmit="entrar(event)">
+
+                <label>
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Digite seu e-mail"
+                    required>
+
+
+                <label>
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="loginSenha"
+                    placeholder="Digite sua senha"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary full">
+                    Entrar
+                </button>
+
+            </form>
+
+
+            <p class="form-footer">
+
+                Ainda não possui uma conta?
+
+                <button
+                    onclick="mostrarTela('cadastro')">
+                    Criar cadastro
+                </button>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ================= CADASTRO ====================== -->
+    <!-- ================================================= -->
+
+    <div id="cadastro" class="screen">
+
+        <div class="form-container">
+
+            <button class="close-button"
+                onclick="fecharTelas()">
+                ×
+            </button>
+
+            <div class="form-logo">
+                <span>ANABEL</span>
+                <small>CONCEPT</small>
+            </div>
+
+            <h2>Criar sua conta</h2>
+
+            <p class="form-description">
+                Cadastre-se para realizar seus agendamentos.
+            </p>
+
+
+            <form onsubmit="cadastrar(event)">
+
+                <label>
+                    Nome completo
+                </label>
+
+                <input
+                    type="text"
+                    id="cadastroNome"
+                    placeholder="Digite seu nome"
+                    required>
+
+
+                <label>
+                    E-mail
+                </label>
+
+                <input
+                    type="email"
+                    id="cadastroEmail"
+                    placeholder="Digite seu e-mail"
+                    required>
+
+
+                <label>
+                    Telefone
+                </label>
+
+                <input
+                    type="tel"
+                    id="cadastroTelefone"
+                    placeholder="(00) 00000-0000"
+                    required>
+
+
+                <label>
+                    CPF
+                </label>
+
+                <input
+                    type="text"
+                    id="cadastroCpf"
+                    placeholder="000.000.000-00"
+                    required>
+
+
+                <label>
+                    Senha
+                </label>
+
+                <input
+                    type="password"
+                    id="cadastroSenha"
+                    placeholder="Crie uma senha"
+                    required>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary full">
+                    Criar minha conta
+                </button>
+
+            </form>
+
+
+            <p class="form-footer">
+
+                Já possui uma conta?
+
+                <button
+                    onclick="mostrarTela('login')">
+                    Entrar
+                </button>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ================= DASHBOARD ===================== -->
+    <!-- ================================================= -->
+
+    <div id="dashboard" class="screen dashboard-screen">
+
+        <div class="dashboard">
+
+            <!-- MENU LATERAL -->
+
+            <aside class="sidebar">
+
+                <div class="dashboard-logo">
+
+                    <span>ANABEL</span>
+                    <small>CONCEPT</small>
+
+                </div>
+
+
+                <nav>
+
+                    <button class="active">
+                        🏠
+                        Dashboard
+                    </button>
+
+                    <button onclick="mostrarTela('agendamento')">
+                        📅
+                        Agendamentos
+                    </button>
+
+                    <button>
+                        💇
+                        Serviços
+                    </button>
+
+                    <button>
+                        👤
+                        Meu perfil
+                    </button>
+
+                </nav>
+
+
+                <button
+                    class="logout"
+                    onclick="fecharTelas()">
+                    ↪ Sair
+                </button>
+
+            </aside>
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="dashboard-content">
+
+                <header class="dashboard-header">
+
+                    <div>
+
+                        <span>
+                            PAINEL DO CLIENTE
+                        </span>
+
+                        <h1>
+                            Olá, <strong id="nomeCliente">
+                            Cliente
+                            </strong>!
+                        </h1>
+
+                    </div>
+
+
+                    <button
+                        class="profile-circle">
+                        👤
+                    </button>
+
+                </header>
+
+
+                <div class="welcome-card">
+
+                    <div>
+
+                        <span>
+                            ANABEL CONCEPT
+                        </span>
+
+                        <h2>
+                            Seu próximo momento
+                            de cuidado começa aqui.
+                        </h2>
+
+                        <button
+                            class="btn-primary"
+                            onclick="mostrarTela('agendamento')">
+                            Novo agendamento
+                        </button>
+
+                    </div>
+
+                    <div class="welcome-decoration">
+                        ✨
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-grid">
+
+                    <div class="info-card">
+
+                        <span>
+                            📅
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Próximo agendamento
+                            </strong>
+
+                            <p>
+                                Nenhum agendamento
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="info-card">
+
+                        <span>
+                            💎
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Serviços realizados
+                            </strong>
+
+                            <p>
+                                0 serviços
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ================= AGENDAMENTO ==================== -->
+    <!-- ================================================= -->
+
+    <div id="agendamento" class="screen">
+
+        <div class="booking-container">
+
+            <button
+                class="close-button"
+                onclick="mostrarTela('dashboard')">
+                ×
+            </button>
+
+
+            <div class="booking-header">
+
+                <span>
+                    ANABEL CONCEPT
+                </span>
+
+                <h2>
+                    Novo agendamento
+                </h2>
+
+                <p>
+                    Escolha o serviço, profissional,
+                    data e horário.
+                </p>
+
+            </div>
+
+
+            <form onsubmit="confirmarAgendamento(event)">
+
+
+                <!-- SERVIÇO -->
+
+                <div class="booking-section">
+
+                    <label>
+                        1. Escolha o serviço
+                    </label>
+
+                    <select id="servico" required>
+
+                        <option value="">
+                            Selecione um serviço
+                        </option>
+
+                        <option value="Corte de cabelo">
+                            Corte de cabelo
+                        </option>
+
+                        <option value="Manicure">
+                            Manicure
+                        </option>
+
+                        <option value="Pedicure">
+                            Pedicure
+                        </option>
+
+                        <option value="Hidratação">
+                            Hidratação
+                        </option>
+
+                        <option value="Estética">
+                            Estética
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PROFISSIONAL -->
+
+                <div class="booking-section">
+
+                    <label>
+                        2. Escolha o profissional
+                    </label>
+
+                    <select id="profissional" required>
+
+                        <option value="">
+                            Selecione um profissional
+                        </option>
+
+                        <option value="Profissional 01">
+                            Profissional 01
+                        </option>
+
+                        <option value="Profissional 02">
+                            Profissional 02
+                        </option>
+
+                        <option value="Profissional 03">
+                            Profissional 03
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATA -->
+
+                <div class="booking-row">
+
+                    <div class="booking-section">
+
+                        <label>
+                            3. Data
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data"
+                            required>
+
+                    </div>
+
+
+                    <!-- HORÁRIO -->
+
+                    <div class="booking-section">
+
+                        <label>
+                            4. Horário
+                        </label>
+
+                        <select id="horario" required>
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option value="08:00">
+                                08:00
+                            </option>
+
+                            <option value="09:00">
+                                09:00
+                            </option>
+
+                            <option value="10:00">
+                                10:00
+                            </option>
+
+                            <option value="11:00">
+                                11:00
+                            </option>
+
+                            <option value="14:00">
+                                14:00
+                            </option>
+
+                            <option value="15:00">
+                                15:00
+                            </option>
+
+                            <option value="16:00">
+                                16:00
+                            </option>
+
+                            <option value="17:00">
+                                17:00
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-primary full">
+                    Confirmar agendamento
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ================= CONFIRMAÇÃO ==================== -->
+    <!-- ================================================= -->
+
+    <div id="confirmacao" class="screen">
+
+        <div class="confirmation-container">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <span class="confirmation-label">
+                ANABEL CONCEPT
+            </span>
+
+            <h2>
+                Agendamento confirmado!
+            </h2>
+
+            <p>
+                Seu horário foi registrado com sucesso.
+            </p>
+
+
+            <div class="appointment-summary">
+
+                <div>
+                    <span>Serviço</span>
+                    <strong id="resumoServico">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Profissional</span>
+                    <strong id="resumoProfissional">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Data</span>
+                    <strong id="resumoData">
+                        -
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Horário</span>
+                    <strong id="resumoHorario">
+                        -
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn-primary full"
+                onclick="mostrarTela('dashboard')">
+                Ir para o Dashboard
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast" class="toast">
+        Cadastro realizado com sucesso!
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```

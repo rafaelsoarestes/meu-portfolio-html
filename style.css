@@ -1,0 +1,851 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    160deg,
+    rgba(15,12,41,0.25),
+    rgba(48,43,99,0.25),
+    rgba(36,36,62,0.25),
+    rgba(15,23,42,0.25)
+  );
+
+  background-blend-mode: overlay;
+
+  overflow-x: hidden;
+}
+
+/* FUNDO EM CAMADAS */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("fundo.png") center center no-repeat;
+  background-size: 73% auto;
+
+  opacity: 0.55;
+  z-index: -2;
+  pointer-events: none;
+
+  transform: translate(0, 0) scale(1.02);
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+
+  /* 🔥 QUALIDADE + VIDA */
+  filter: 
+  brightness(1.13)
+  contrast(1.15)
+  saturate(1.12)
+  drop-shadow(0 0 20px rgba(0,224,255,0.3))
+  drop-shadow(0 0 40px rgba(56,189,248,0.2));
+
+  /* 🔥 ANIMAÇÕES */
+  animation: 
+    flutuarFundo 20s ease-in-out infinite,
+    pulsarFundo 6s ease-in-out infinite;
+
+  /* 🔥 MAIS DEFINIÇÃO */
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* ANIMAÇÕES FUNDO */
+@keyframes flutuarFundo {
+  0% { transform: translate(0px, 0px) scale(1); }
+  25% { transform: translate(-10px, 5px) scale(1.02); }
+  50% { transform: translate(10px, -8px) scale(1.03); }
+  75% { transform: translate(-6px, 6px) scale(1.02); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@keyframes pulsarFundo {
+  0% { filter: brightness(1.1) saturate(1.1); }
+  50% { filter: brightness(1.2) saturate(1.2); }
+  100% { filter: brightness(1.1) saturate(1.1); }
+}
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  color: #cbd5e1;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a {
+  color: #cbd5e1;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: #00e0ff;
+
+  transform: translateY(-5px) scale(1.05);
+
+  text-shadow:
+    0 0 8px rgba(0,224,255,0.9),
+    0 0 15px rgba(0,224,255,0.7),
+    0 0 25px rgba(0,224,255,0.5);
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px 40px;
+}
+
+.hero h1 {
+  margin-bottom: 15px;
+  font-size: 32px;
+}
+
+.hero p {
+  margin: 10px auto;
+  max-width: 700px;
+}
+
+/* FOTO */
+.foto {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 30px;
+  border: 3px solid #38bdf8;
+  animation: flutuar 5s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(56,189,248,0.7);
+  transition: 0.4s;
+}
+
+.foto:hover {
+  transform: scale(1.18);
+
+  box-shadow: 
+    0 0 50px rgba(56,189,248,1),
+    0 0 100px rgba(56,189,248,0.9),
+    0 0 150px rgba(0,224,255,0.8),
+    0 0 220px rgba(0,224,255,0.6);
+
+  filter: brightness(1.1) contrast(1.1);
+}
+
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* SEÇÕES */
+section {
+  padding: 60px 20px;
+}
+
+#projetos {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 🔥 ISSO CENTRALIZA TUDO */
+}
+
+/* CENTRALIZAR TÍTULOS */
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* CENTRALIZAR EMAIL 🔥 */
+#contato p {
+  text-align: center;
+}
+
+/* TEXTO SOBRE */
+#sobre p {
+  max-width: 800px;
+  margin: 10px auto;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* PROJETOS */
+.projetos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 25px;
+
+  width: 100%;           /* 🔥 GARANTE LARGURA */
+  max-width: 1200px;     /* 🔥 LIMITA BONITO */
+  margin: 0 auto;        /* 🔥 CENTRALIZA */
+}
+
+/* CARDS */
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  overflow: hidden;
+
+  width: 320px;
+
+  min-height: 530px; /* 🔥 todos ficam do tamanho do card do vídeo */
+
+  transition: all 0.4s ease;
+  text-align: center;
+  padding-bottom: 25px;
+
+  border: 1px solid rgba(56,189,248,0.15);
+
+  box-shadow: 
+    0 0 0 rgba(56,189,248,0),
+    0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ✨ LÂMINA REFINADA */
+.card {
+  position: relative; /* importante */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 260px;
+  transition: all 0.35s ease;
+  text-align: center;
+  padding-bottom: 15px;
+
+  border: 1px solid rgba(56,189,248,0.12);
+
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* ✨ LÂMINA (estilo original, só refinada) */
+.card {
+  position: relative; /* 👈 ADICIONA ISSO (corrige efeito lâmina também) */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 320px;
+  transition: all 0.4s ease;
+  text-align: center;
+
+  padding-bottom: 25px; /* 👈 AUMENTEI */
+
+  border: 1px solid rgba(56,189,248,0.15);
+  box-shadow: 
+    0 0 0 rgba(56,189,248,0),
+    0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* 🔥 EFEITO LÂMINA (mantido) */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0,224,255,0.5),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+  transition: 0.6s ease;
+  opacity: 0;
+}
+
+.card:hover::before {
+  left: 120%;
+  opacity: 1;
+}
+
+/* 👇 AQUI ESTÁ O PRINCIPAL AJUSTE */
+.card img,
+.card video {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 10px;
+
+  /* efeito glass */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+
+  /* leve brilho */
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.05);
+
+  box-shadow: 
+    0 0 10px rgba(56,189,248,0.8),
+    0 0 20px rgba(56,189,248,0.7),
+    0 0 40px rgba(0,224,255,0.6),
+    0 0 80px rgba(0,224,255,0.4),
+    0 15px 40px rgba(0,0,0,0.6);
+}
+
+.card p {
+  padding: 0 10px;
+}
+
+/* CLIQUE */
+.card button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(56,189,248,0.6);
+}
+
+/* ANIMAÇÃO AO ROLAR */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* DESTAQUE */
+.destaque {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+
+  background: linear-gradient(90deg, #ffffff, #00e0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* LUZ */
+.luz {
+  position: fixed;
+  width: 70px;
+  height: 70px;
+  background: radial-gradient(circle, rgba(56,189,248,0.25), transparent);
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+/* TEXTO */
+body, h1, h2, h3, p, a {
+  color: white;
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+/* VÍDEO */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -3;
+  opacity: 0.45;
+
+  filter: blur(1.5px) brightness(1) contrast(1.2) saturate(1.3);
+
+  transform: scale(1);
+}
+
+/* LEVE BRILHO GERAL */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 60%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* 📱 RESPONSIVIDADE */
+@media (max-width: 768px) {
+
+  /* NAVBAR */
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px 10px;
+  }
+
+  /* HERO */
+  .hero {
+    padding: 100px 15px 30px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* FOTO */
+  .foto {
+    width: 130px;
+    height: 130px;
+  }
+
+  /* SEÇÕES */
+  section {
+    padding: 50px 15px;
+  }
+
+  /* TEXTO SOBRE */
+  #sobre p {
+    font-size: 14px;
+    text-align: justify;
+  }
+
+  /* PROJETOS */
+  .projetos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  /* BOTÕES */
+  .card button {
+    width: 90%;
+  }
+
+  /* LUZ (bolinha do mouse) menor no celular */
+  .luz {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+/* EFEITO NOS TÍTULOS */
+.hero h1,
+section h2 {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.hero h1:hover,
+section h2:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  background: linear-gradient(90deg, #00e0ff, #38bdf8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow: 
+    0 0 10px rgba(56,189,248,0.8),
+    0 0 20px rgba(56,189,248,0.6),
+    0 0 30px rgba(56,189,248,0.4);
+}
+
+/* EFEITO NO "MEU PORTFÓLIO" */
+/* EFEITO FORTE NO TÍTULO DO TOPO */
+header .logo {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+header .logo:hover {
+  transform: translateY(-6px) scale(1.08);
+
+  background: linear-gradient(90deg, #00e0ff, #38bdf8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+    0 0 10px rgba(0,224,255,0.9),
+    0 0 20px rgba(0,224,255,0.7),
+    0 0 30px rgba(0,224,255,0.5);
+}
+
+/* LATERAIS SEM CONFLITO */
+body .laterais::before,
+body .laterais::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 160px;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ESQUERDA */
+body .laterais::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 224, 255, 0.25),
+    transparent
+  );
+}
+
+/* DIREITA */
+body .laterais::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 224, 255, 0.15),
+    transparent
+  );
+}
+
+/* BOLHAS PREMIUM 🔥 */
+.bolhas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.bolhas span {
+  position: absolute;
+  bottom: -60px;
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: subir 18s linear infinite;
+
+  opacity: 1;
+}
+
+/* ANIMAÇÃO */
+@keyframes subir {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-110vh);
+    opacity: 0;
+  }
+}
+
+/* REDES SOCIAIS */
+.redes {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes a {
+  font-size: 28px;
+  color: #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+/* EFEITO NEON AO PASSAR */
+.redes a:hover {
+  color: #00e0ff;
+  transform: translateY(-6px) scale(1.2);
+
+  text-shadow:
+    0 0 8px rgba(0,224,255,0.9),
+    0 0 15px rgba(0,224,255,0.7),
+    0 0 25px rgba(0,224,255,0.5);
+}
+
+#contato a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+#contato a:hover {
+  color: #00e0ff;
+
+  text-shadow:
+    0 0 8px rgba(0,224,255,0.9),
+    0 0 15px rgba(0,224,255,0.7),
+    0 0 25px rgba(0,224,255,0.5);
+
+  transform: scale(1.05);
+}
+
+.destaque {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.destaque:hover {
+  transform: translateY(-4px) scale(1.05);
+
+  background: linear-gradient(90deg, #00e0ff, #38bdf8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  text-shadow:
+  0 0 10px rgba(0,224,255,1),
+  0 0 20px rgba(0,224,255,0.9),
+  0 0 35px rgba(0,224,255,0.8),
+  0 0 50px rgba(0,224,255,0.7),
+  0 0 70px rgba(0,224,255,0.6);
+}
+
+/* VÍDEO DE FUNDO (mais distante) */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: -4;
+  transform: scale(1.1); /* maior = mais longe */
+  filter: brightness(0.6); /* escurece */
+}
+
+/* VÍDEO BASE */
+#bg-video,
+#bg-video-2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* PRIMEIRO VÍDEO */
+#bg-video {
+  z-index: -3;
+  opacity: 0.4;
+  filter: brightness(0.5) contrast(1.2) saturate(0.8);
+}
+
+/* SEGUNDO VÍDEO (PERFEITO PRA VOCÊ 🔥) */
+#bg-video-2 {
+  object-fit: contain; /* mostra o vídeo todo */
+  
+  z-index: -2;
+  opacity: 0.35;
+  mix-blend-mode: screen;
+
+  transform: scale(1.3); /* 👈 aumenta o tamanho */
+}
+
+/* EFEITO NO RODAPÉ */
+footer p {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+footer p:hover {
+  color: #38bdf8;
+  transform: translateY(-3px);
+
+  text-shadow:
+    0 0 5px #38bdf8,
+    0 0 10px #38bdf8,
+    0 0 20px #0ea5e9;
+}
+
+#nome {
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+#nome:hover {
+  transform: translateY(-6px) scale(1.05);
+
+  background: linear-gradient(90deg, #00e0ff, #38bdf8, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 🔥 CONTORNO PRA NÃO PERDER LEITURA */
+  -webkit-text-stroke: 0.5px rgba(255,255,255,0.7);
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.8),
+    0 0 15px rgba(0,224,255,1),
+    0 0 30px rgba(0,224,255,0.9),
+    0 0 50px rgba(0,224,255,0.7),
+    0 0 80px rgba(0,224,255,0.5);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 420px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  background-color: #000; /* opcional */
+  border-radius: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 280px;
+  object-fit: contain;
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+.card video:hover,
+.card img:hover {
+  box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+}
+
+.img-rolar {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+
+  background-size: cover;
+  background-position: top;
+  transition: 4s ease;
+}
+
+.img-rolar:hover {
+  background-position: bottom;
+}
+
+.card button {
+  margin: 10px auto; /* tira as laterais */
+  padding: 12px;
+
+  width: 90%;
+
+  border: none;
+  border-radius: 8px;
+
+  background: linear-gradient(45deg, #00e0ff, #38bdf8);
+  color: #fff;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+}
+
+#projetos h2 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+
+  background: linear-gradient(90deg, #ffffff, #00e0ff, #38bdf8, #ffffff);
+  background-size: 300% auto;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* 👇 CONTORNO BRANCO */
+  -webkit-text-stroke: 1px #ffffff;
+
+  animation: neonFlow 4s linear infinite, neonPulse 2s infinite alternate;
+}
+
+/* 🌊 efeito lâmina passando */
+@keyframes neonFlow {
+  0% {
+    background-position: -100% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* ✨ brilho pulsando */
+@keyframes neonPulse {
+  from {
+    text-shadow:
+      0 0 5px rgba(0, 224, 255, 0.6),
+      0 0 10px rgba(0, 224, 255, 0.5),
+      0 0 20px rgba(0, 224, 255, 0.4);
+  }
+  to {
+    text-shadow:
+      0 0 10px rgba(0, 224, 255, 1),
+      0 0 20px rgba(0, 224, 255, 0.9),
+      0 0 40px rgba(0, 224, 255, 0.8),
+      0 0 80px rgba(0, 224, 255, 0.6);
+  }
+}

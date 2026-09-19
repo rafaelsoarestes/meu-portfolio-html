@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="bolhas">
+
+  <!-- ESQUERDA -->
+  <span style="left:2%; width:50px; height:50px; background-image:url('pokebola.png'); animation-duration:18s;"></span>
+  
+  <span style="left:5%; width:70px; height:70px; background-image:url('pikachu.png'); animation-duration:22s;"></span>
+
+  <span style="left:8%; width:60px; height:60px; background-image:url('mickey-cabeca.png'); animation-duration:20s;"></span>
+
+  <span style="left:12%; width:80px; height:80px; background-image:url('mickey.png'); animation-duration:24s;"></span>
+
+  <!-- DIREITA -->
+  <span style="left:88%; width:65px; height:65px; background-image:url('pokebola.png'); animation-duration:19s;"></span>
+
+  <span style="left:91%; width:75px; height:75px; background-image:url('pikachu.png'); animation-duration:23s;"></span>
+
+  <span style="left:94%; width:55px; height:55px; background-image:url('mickey-cabeca.png'); animation-duration:21s;"></span>
+
+  <span style="left:97%; width:85px; height:85px; background-image:url('mickey.png'); animation-duration:25s;"></span>
+
+</div>
+
+  <!-- VÍDEO -->
+  <video autoplay muted loop id="bg-video">
+    <source src="fundo.mp4" type="video/mp4">
+  </video>
+
+  <video autoplay muted loop id="bg-video-2">
+  <source src="fundo2.mp4" type="video/mp4">
+</video>
+
+  <!-- NAVBAR -->
+  <header>
+    <h2 class="logo">Meu Portfólio</h2>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="container">
+
+      <img src="perfil.jpg.jpeg" class="foto" alt="Foto de Rafael Soares">
+
+      <!-- 🔥 NOME CORRIGIDO -->
+      <h1 id="nome"></h1>
+
+      <p>
+        Sou professor de Arte 🎨 e estudante de Tecnologia em Sistemas para Internet pela UESPI,
+        apaixonado por transformar ideias em experiências visuais que inspiram, conectam e ensinam.
+        Busco unir criatividade e tecnologia para transformar o mundo, criando soluções que impactam vidas,
+        despertam emoções e contribuem para uma sociedade mais inovadora e conectada.
+      </p>
+
+      <p class="destaque">Desenvolvedor em formação 🚀</p>
+
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="reveal">
+    <div class="container">
+
+      <h2>Sobre Mim</h2>
+
+      <p>
+  Sou apaixonado por desenhar, criar ilustrações, desenvolver artesanato e explorar o mundo através da arte 🎨. 
+  Gosto de assistir a séries, filmes e mergulhar em documentários sobre o universo 🌌 e a natureza 🌿, 
+  sempre buscando novas inspirações para minhas criações.
+</p>
+
+<p>
+  Também sou amante de animes 🎌 e fã de Pokémon desde a infância, elementos que influenciam diretamente 
+  minha criatividade, meu estilo visual e a forma como enxergo o mundo ao meu redor.
+</p>
+
+<p>
+  Durante minha formação em Sistemas para Internet pela UESPI, desenvolvi projetos importantes, incluindo 
+  a criação de um protótipo completo de aplicativo, desde o design visual até a navegação funcional. 
+  Nesse processo, fui responsável por estruturar a experiência do usuário, criando soluções intuitivas, 
+  organizadas e visualmente atrativas.
+</p>
+
+<p>
+  Atualmente, estou desenvolvendo este portfólio online, unindo arte 🎨 e tecnologia 💻 para criar 
+  experiências visuais modernas, interativas e com identidade própria.
+</p>
+
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="reveal">
+
+  <h2>Meus Projetos</h2>
+
+  <div class="projetos">
+
+    <div class="card">
+      <img src="projeto1.jpg" alt="Projeto 1">
+
+      <h3>Portfólio Web</h3>
+
+      <p>
+Projeto de portfólio com design moderno, interatividade e efeitos visuais que destacam minhas habilidades em desenvolvimento web.
+</p>
+
+      <a href="projetos/projeto-1/index.html">
+        <button>Ver Projeto</button>
+      </a>
+    </div>
+
+    <div class="card">
+      <video class="card-video" autoplay muted loop playsinline>
+        <source src="projeto2.mp4" type="video/mp4">
+      </video>
+
+      <h3>Protótipo de Aplicativo</h3>
+
+      <p>
+Criação de um protótipo com foco em design moderno, navegação intuitiva e experiência do usuário.
+</p>
+
+      <button onclick="window.location.href='projetos/projeto-2/index.html'">
+        Ver Projeto
+      </button>
+    </div>
+
+    <div class="card">
+      <img src="projeto3.jpg" alt="Projeto 3">
+
+      <h3>Projetos Criativos</h3>
+
+      <p>
+Trabalhos autorais focados em arte, ilustração e design, explorando estilos inspirados em animações e cultura pop.
+</p>
+
+      <button onclick="window.location.href='projetos/projeto-3/index.html'">
+        Ver Projeto
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="reveal">
+  <h2>Contato</h2>
+
+  <p>
+    Email: 
+    <a href="mailto:rafael.soaresdomingos@gmail.com">
+      rafael.soaresdomingos@gmail.com
+    </a>
+  </p>
+
+  <!-- REDES SOCIAIS -->
+  <div class="redes">
+
+    <a href="https://www.instagram.com/rafa_soaresd?igsh=eHpoNGh1c29yN3E4" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <a href="https://wa.me/558699167424" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="https://www.facebook.com/rafael.soares.697476" target="_blank">
+      <i class="fab fa-facebook"></i>
+    </a>
+
+  </div>
+</section>
+
+  <!-- EFEITOS -->
+  <div class="luz"></div>
+  <div class="ondas"></div>
+
+  <script src="script.js"></script>
+
+  <footer>
+    <p>© 2026 Rafael Soares</p>
+  </footer>
+
+</body>
+</html>
