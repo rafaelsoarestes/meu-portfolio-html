@@ -850,67 +850,48 @@ footer p:hover {
   }
 }
 
-/* Performance e novidades */
-#bg-video,
-#bg-video-2 {
-  display: none;
+/* Detalhes adicionais: os fundos e efeitos originais continuam preservados. */
+.card-tag {
+  display: block;
+  margin: 10px 15px 0;
+  color: #38bdf8;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
 }
 
-.instagram-novidades {
+.novidades-instagram {
   display: flex;
   align-items: center;
-  gap: 16px;
-  max-width: 620px;
-  margin: 36px auto 0;
-  padding: 18px 20px;
-  border: 1px solid rgba(255, 128, 102, 0.35);
+  gap: 15px;
+  max-width: 680px;
+  margin: 32px auto 0;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 14px;
-  background: rgba(255, 128, 102, 0.06);
+  background: rgba(255, 255, 255, 0.06);
   text-align: left;
+  backdrop-filter: blur(8px);
 }
 
-.instagram-sinal {
+.novidades-mark {
   display: grid;
   width: 42px;
   height: 42px;
   flex: 0 0 42px;
   place-items: center;
-  border: 1px solid #ff8066;
-  border-radius: 50%;
-  color: #ff8066;
-  font-size: 1.4rem;
+  border: 1px solid #f472b6;
+  border-radius: 13px;
+  color: #f472b6;
+  font-size: 1.3rem;
 }
 
-.instagram-novidades strong {
-  color: #fff;
-}
+.novidades-instagram strong { color: #fff; }
+.novidades-instagram p { margin: 2px 0 0; color: #cbd5e1; font-size: 0.82rem; }
+.novidades-instagram a { margin-left: auto; color: #38bdf8; font-size: 0.78rem; text-decoration: none; white-space: nowrap; }
+.novidades-instagram a:hover { color: #fff; }
 
-.instagram-novidades p {
-  margin: 2px 0 0;
-  color: #a8bac0;
-  font-size: 0.82rem;
-}
-
-.instagram-novidades a {
-  margin-left: auto;
-  color: #5de7e4;
-  font-size: 0.78rem;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.instagram-novidades a:hover {
-  color: #fff;
-}
-
-@media (max-width: 768px) {
-  .instagram-novidades {
-    align-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  .instagram-novidades a {
-    width: 100%;
-    margin-left: 58px;
-  }
+@media (max-width: 600px) {
+  .novidades-instagram { align-items: flex-start; flex-wrap: wrap; }
+  .novidades-instagram a { width: 100%; margin-left: 57px; }
 }
