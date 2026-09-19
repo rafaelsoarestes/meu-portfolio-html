@@ -82,3 +82,33 @@ document.addEventListener('mousemove', (e) => {
     bolha.style.transform = `translate(${x * (i+1) * 0.1}px, ${y * (i+1) * 0.1}px)`;
   });
 });
+
+const secoes = document.querySelectorAll('section[id]');
+const linksNavegacao = document.querySelectorAll('nav a');
+
+const observadorNavegacao = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    if (!entrada.isIntersecting) return;
+
+    linksNavegacao.forEach((link) => {
+      link.classList.toggle('atual', link.getAttribute('href') === `#${entrada.target.id}`);
+    });
+  });
+}, { rootMargin: '-35% 0px -55% 0px' });
+
+secoes.forEach((secao) => observadorNavegacao.observe(secao));
+
+document.querySelectorAll('.card').forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const area = card.getBoundingClientRect();
+    const rotateX = ((event.clientY - area.top) / area.height - 0.5) * -5;
+    const rotateY = ((event.clientX - area.left) / area.width - 0.5) * 5;
+    card.style.setProperty('--tilt-x', `${rotateX}deg`);
+    card.style.setProperty('--tilt-y', `${rotateY}deg`);
+  });
+
+  card.addEventListener('pointerleave', () => {
+    card.style.setProperty('--tilt-x', '0deg');
+    card.style.setProperty('--tilt-y', '0deg');
+  });
+});
