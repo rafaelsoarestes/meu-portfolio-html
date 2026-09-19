@@ -83,32 +83,21 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-const secoes = document.querySelectorAll('section[id]');
-const linksNavegacao = document.querySelectorAll('nav a');
+// Alguns celulares bloqueiam o autoplay ate haver uma interacao.
+const fundosEmVideo = document.querySelectorAll('#bg-video, #bg-video-2');
 
-const observadorNavegacao = new IntersectionObserver((entradas) => {
-  entradas.forEach((entrada) => {
-    if (!entrada.isIntersecting) return;
-
-    linksNavegacao.forEach((link) => {
-      link.classList.toggle('atual', link.getAttribute('href') === `#${entrada.target.id}`);
-    });
+function iniciarFundos() {
+  fundosEmVideo.forEach((video) => {
+    video.muted = true;
+    const tentativa = video.play();
+    if (tentativa) tentativa.catch(() => {});
   });
-}, { rootMargin: '-35% 0px -55% 0px' });
+}
 
-secoes.forEach((secao) => observadorNavegacao.observe(secao));
-
-document.querySelectorAll('.card').forEach((card) => {
-  card.addEventListener('pointermove', (event) => {
-    const area = card.getBoundingClientRect();
-    const rotateX = ((event.clientY - area.top) / area.height - 0.5) * -5;
-    const rotateY = ((event.clientX - area.left) / area.width - 0.5) * 5;
-    card.style.setProperty('--tilt-x', `${rotateX}deg`);
-    card.style.setProperty('--tilt-y', `${rotateY}deg`);
-  });
-
-  card.addEventListener('pointerleave', () => {
-    card.style.setProperty('--tilt-x', '0deg');
-    card.style.setProperty('--tilt-y', '0deg');
-  });
+window.addEventListener('load', iniciarFundos, { once: true });
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) iniciarFundos();
+});
+['touchstart', 'pointerdown'].forEach((evento) => {
+  document.addEventListener(evento, iniciarFundos, { once: true, passive: true });
 });
